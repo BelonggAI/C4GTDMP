@@ -8,14 +8,25 @@ const Hero = () => {
   const el = useRef(null);
 
   useEffect(() => {
+    const strings = [
+      "Done by बिलोंग AI.",
+      "Done by বেলং AI",
+      "Done by ಬೇಲೊಂಗ್ AI",
+      "Done by బెలోంగ్ AI",
+      "Done by ਬੇਲੋਂਗ AI",
+      "Done by ବେଲଂ AI",
+
+    ];
+  
     const typed = new Typed(el.current, {
-      strings: ["Done by BelonggAI."],
+      strings: strings,
       startDelay: 300,
       typeSpeed: 100,
       backSpeed: 100,
       loop: true,
-    });
 
+    });
+  
     return () => {
       typed.destroy();
     };
